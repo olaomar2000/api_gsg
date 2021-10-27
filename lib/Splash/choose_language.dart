@@ -1,7 +1,9 @@
-import 'package:fahras/Splash/splash1.dart';
+import 'package:fahras/Splash/chose_login.dart';
 import 'package:fahras/values/colors.dart';
 import 'package:fahras/values/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:localize_and_translate/localize_and_translate.dart';
 
 class chooseLan_Screen extends StatefulWidget {
   @override
@@ -14,7 +16,10 @@ class _chooseLan_ScreenState extends State<chooseLan_Screen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return ScreenUtilInit(
+        designSize: Size(375,812),
+    builder:()=>
+      Scaffold(
       body: Stack(
         children: [
           Container(
@@ -37,7 +42,7 @@ class _chooseLan_ScreenState extends State<chooseLan_Screen> {
                     topLeft: Radius.circular(30.0)),
                 color: Colors.white,
               ),
-              height: 407,
+              height: 407.h,
               width: double.infinity,
               child: Column(
                 children: [
@@ -45,7 +50,7 @@ class _chooseLan_ScreenState extends State<chooseLan_Screen> {
                     'فهرس',
                     style: splash_title2,
                   ),
-                  SizedBox(height: 27),
+                  SizedBox(height: 27.h),
                   Text(
                     'الرجاء اختار اللغة المفضلة لديك',
                     style: splash_desc2,
@@ -54,12 +59,12 @@ class _chooseLan_ScreenState extends State<chooseLan_Screen> {
                     'Please Select Your Preferred  language',
                     style: splash_desc2,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 20.h),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(
-                        width: 140,
+                        width: 140.w,
                         child: RaisedButton(
                           child: Text('ENGLISH', style: splash_btn),
                           textColor: blueColor,
@@ -68,12 +73,23 @@ class _chooseLan_ScreenState extends State<chooseLan_Screen> {
                           ),
                           color: btn1 ? AppColor1 : whiteColor,
                           hoverColor: AppColor1,
-                          onPressed: () {},
+                          onPressed: () {
+                            translator.setNewLanguage(
+                              context,
+                              newLanguage:  'en' ,
+                              remember: true,
+                              restart: true,
+                            );
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => splash1_Screen()),
+                            );
+                          },
                         ),
                       ),
-                      SizedBox(width: 30),
+                      SizedBox(width: 30.w),
                       SizedBox(
-                        width: 140,
+                        width: 140.w,
                         child: RaisedButton(
                           child: Text('عربي', style: splash_btn),
                           textColor: blueColor,
@@ -81,6 +97,12 @@ class _chooseLan_ScreenState extends State<chooseLan_Screen> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           onPressed: () {
+                            translator.setNewLanguage(
+                              context,
+                              newLanguage: 'ar',
+                              remember: true,
+
+                            );
                             Navigator.push(
                               context,
                               MaterialPageRoute(builder: (context) => splash1_Screen()),
@@ -98,7 +120,7 @@ class _chooseLan_ScreenState extends State<chooseLan_Screen> {
           ),
         ],
       ),
-    );
+    ));
   }
 }
 

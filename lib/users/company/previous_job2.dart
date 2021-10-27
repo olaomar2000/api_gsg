@@ -1,0 +1,143 @@
+import 'package:fahras/get/app_get.dart';
+import 'package:get/get.dart';
+
+import 'photos.dart';
+import 'package:fahras/values/colors.dart';
+import 'package:fahras/widget/back_icon.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter_svg/svg.dart';
+
+class previousJob2 extends StatefulWidget{
+  @override
+  State<previousJob2> createState() => _previousJob2State();
+}
+
+class _previousJob2State extends State<previousJob2> {
+  @override
+  Widget build(BuildContext context) {
+    Appget appget = Get.find();
+    return SafeArea(
+      child: Scaffold(
+        body: Stack(
+          children: [
+            Container(
+              height: 348,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image:
+                  AssetImage(
+                    'assets/images/jobPhoto.png',
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+                padding:
+                const EdgeInsets.symmetric(horizontal: 16, vertical: 7),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        height: 41,
+                        width: 41,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.1),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: Offset(0, 1),
+                            ),
+                          ],
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: SvgPicture.asset(
+                            'assets/images/notifications_icon.svg',
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: 41,
+                        width: 41,
+                        decoration: BoxDecoration(
+                          borderRadius:BorderRadius.circular(6),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.1),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: Offset(0, 1),
+                            ),
+                          ],
+                        ),
+                        child:Icon(
+                          Icons.arrow_forward,
+                          color: blackColor,
+                          size: 26.0,
+
+                        ),
+                      ),
+                    ])),
+            SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 315,left: 16,right: 16),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        color: Colors.white,
+                      ),
+                      child: Padding(
+                        padding:  EdgeInsets.symmetric(horizontal: 10),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Icon(  Icons.favorite_border),
+                                Text('${appget.workPageMap.value['data']['name']}',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                              child: Divider(
+                                thickness: 0.5,
+                                color: Colors.grey,
+                              ),
+                            ),
+                            Text('${appget.workPageMap.value['data']['description']}'),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                 Padding(
+                   padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 10),
+                   child: Text('المزيد من الصور',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold),),
+                 ),
+                  photo()
+                ],
+              ),
+            ),
+
+
+
+          ],
+        ),
+      ),
+    );
+  }
+}

@@ -1,11 +1,13 @@
 import 'package:fahras/values/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class back extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16,vertical: 7),
+    return
+      Padding(
+      padding: EdgeInsets.symmetric(horizontal: 16,vertical: 22),
       child: Align(
         alignment:Alignment.topRight,
         child: GestureDetector(
@@ -15,7 +17,6 @@ class back extends StatelessWidget{
           child: Container(
             height: 41,
             width: 41,
-
             decoration: BoxDecoration(
               borderRadius:BorderRadius.circular(6),
               color: Colors.white,
@@ -31,13 +32,13 @@ class back extends StatelessWidget{
             child:Icon(
               Icons.arrow_forward,
               color: blackColor,
-              size: 26.0,
+              size: 26.0.sp,
 
             ),
           ),
         ),
       ),
-    );
+        );
   }
 
 }

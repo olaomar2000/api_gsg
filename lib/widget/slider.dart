@@ -13,7 +13,6 @@ final List<String> img = [
 final List<Widget> imageSliders = img
     .map((item) => Container(
   child: Container(
-
     child: ClipRRect(
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
         child: Stack(

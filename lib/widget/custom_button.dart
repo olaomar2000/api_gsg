@@ -11,8 +11,6 @@ class custom_button extends StatelessWidget{
   final Color textColor;
   Function onPress;
 
-
-
   custom_button(
       {this.height_btn,
       this.width_btn,
@@ -36,7 +34,8 @@ class custom_button extends StatelessWidget{
         color:this.textColor ,
       ),),
         color: this.background,
-        onPressed: ()=>this.onPress,
+        onPressed: this.onPress,
+
       ),
     );
   }

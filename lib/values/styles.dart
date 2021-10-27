@@ -3,6 +3,9 @@
 import 'package:flutter/material.dart';
 import 'colors.dart';
 
+
+
+
 final splash_title =TextStyle(fontSize: 115,fontWeight:FontWeight.bold,color: whiteColor);
 final splash_title2 =TextStyle(fontSize: 115,fontWeight:FontWeight.bold,color: AppColor1);
 
@@ -18,3 +21,8 @@ final splash1_desc2 =TextStyle(fontSize: 18,fontWeight:FontWeight.bold,color: Ap
 
 final screen_name = TextStyle(fontSize: 20,fontWeight:FontWeight.bold,color: blackColor);
 
+
+ TextStyle textStyle(double fontsize,FontWeight fontWeight,Color color){
+
+   return TextStyle(fontSize:fontsize ,fontWeight:fontWeight,color: color);
+}

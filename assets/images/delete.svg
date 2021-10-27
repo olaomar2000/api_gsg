@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88" height="88" viewBox="0 0 88 88">
+  <defs>
+    <filter id="Base" x="0" y="0" width="88" height="88" filterUnits="userSpaceOnUse">
+      <feOffset dy="10" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-color="#1d1d26" flood-opacity="0.2"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="ic_base" transform="translate(32 22)">
+    <g transform="matrix(1, 0, 0, 1, -32, -22)" filter="url(#Base)">
+      <rect id="Base-2" data-name="Base" width="28" height="28" rx="6" transform="translate(30 20)" fill="#1d1d26"/>
+    </g>
+    <g id="Group_70370" data-name="Group 70370" transform="translate(-110.085 -680.453)">
+      <rect id="Rectangle_18602" data-name="Rectangle 18602" width="4.52" height="18.108" transform="translate(126.889 684.453) rotate(45)" fill="#fff"/>
+      <rect id="Rectangle_18603" data-name="Rectangle 18603" width="4.52" height="18.107" transform="translate(130.085 697.257) rotate(135)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
