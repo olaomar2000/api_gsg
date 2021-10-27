@@ -7,7 +7,6 @@ The first is a customer who reviews companies and products.
 The second is the company that also reviews companies and adds products and modifications to them.
 
 ## Techniques Used :
-⭐Google Maps
 
 ⭐shared preferences and Apis
 
